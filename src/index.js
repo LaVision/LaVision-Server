@@ -7,7 +7,6 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 // Initialize Firebase
-// TODO: Replace with your project's customized code snippet
 var config = {
     apiKey: "AIzaSyDhHOVv0cuU7TvydMsoRvvOtv9tDTaS1zk",
     authDomain: "lavision.firebaseapp.com",
