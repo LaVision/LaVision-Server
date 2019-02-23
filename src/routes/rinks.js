@@ -6,4 +6,4 @@ router.route('/rinks').get(rinksController.getAllRinks);
 router.route('/rinks/:rink').get(rinksController.getRinkInfo);
 router.route('/rinks/:rink').post(rinksController.postRinkInfo);
 
-export const client = { router, path: '' };
+export const rinks = { router, path: '' };
