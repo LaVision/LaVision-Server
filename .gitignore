@@ -4,7 +4,6 @@
 
 .DS_Store
 
-
 #################
 # Node Packages #
 #################
@@ -12,3 +11,7 @@
 node_modules
 dist
 .env
+
+############
+# Database #
+############

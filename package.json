@@ -1,0 +1,39 @@
+{
+  "name": "lavision",
+  "version": "1.0.0",
+  "description": "real-life tracker of population size",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node src/index.js",
+    "serve": "npm run build && node dist/index.js",
+    "build": "rm -Rf dist && babel src -d dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LaVision/LaVision-Server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LaVision/LaVision-Server/issues"
+  },
+  "homepage": "https://github.com/LaVision/LaVision-Server#readme",
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0",
+    "body-parser": "*",
+    "cors": "^2.8.5",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "firebase": "^5.8.2",
+    "moment": "^2.24.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.6",
+    "@babel/node": "^7.0.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/preset-env": "^7.1.6",
+    "nodemon": "^1.18.9"
+  }
+}
