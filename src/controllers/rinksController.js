@@ -35,8 +35,10 @@ export const rinksController = {
         const { time, num } = req.body;
 
         // integer type for consistency
-        var stamptime = moment.unix(time).format('lll');
+        var stamptime = ((typeof time) === 'string') ? parseInt(time) : time;
         var people = ((typeof num) === 'string') ? parseInt(num) : num;
+
+        stamptime = moment.unix(time).format('lll');
         var database = firebase.database();
         database = database.ref('rinks/' + rink);
         database.update({
