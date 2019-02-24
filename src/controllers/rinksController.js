@@ -1,4 +1,5 @@
 import firebase from "firebase";
+import moment from "moment";
 
 export const rinksController = {
     getAllRinks: async (req, res) => {
@@ -34,17 +35,20 @@ export const rinksController = {
         const { time, num } = req.body;
 
         // integer type for consistency
+        var stamptime = moment.unix(time).format('lll');
         var people = ((typeof num) === 'string') ? parseInt(num) : num;
         var database = firebase.database();
         database = database.ref('rinks/' + rink);
         database.update({
-            lastUpdated: time,
+            lastUpdated: stamptime,
             numPeople: people,
         });
 
         var database_history = firebase.database();
         database_history = database_history.ref('rinks/' + rink + '/history/');
-        database_history.child(time).set(num);
+        database_history.child(stamptime).set(num);
+
+
 
         res.json({ status: 'SUCCESS' });
     },
